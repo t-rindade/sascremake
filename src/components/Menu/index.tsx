@@ -11,9 +11,9 @@ export default function Menu() {
           <h1>SASC</h1>
         </div>
         <div id="linksPrincipal">
-          <Link to="home">Visão Geral</Link>
-          <Link to="home">Equipamentos</Link>
-          <Link to="home">Dashboards</Link>
+          <Link to="home">Home</Link>
+          <Link to="home">Equipamento</Link>
+          <Link to="home">Dashboard</Link>
           <Link to="home">Usuários</Link>
         </div>
         <div id="sairSeparador">

@@ -1,7 +1,7 @@
 #menu {
   position: fixed;
   background-color: black;
-  width: 15%;
+  width: 18%;
   height: 100%;
 }
 
@@ -17,6 +17,27 @@
 #linksPrincipal a {
   border-radius: 15px;
   background-color: var(--cinza);
+  color: var(--branco);
+  padding: 25px;
+  margin: 15px;
+  cursor: pointer;
+  height: 100%;
+  width: 75%;
+  word-wrap: break-word;
+}
+
+#sairSeparador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+#sairSeparador a {
+  border-radius: 15px;
+  background-color: var(--rosa);
   color: var(--branco);
   padding: 25px;
   margin: 15px;
