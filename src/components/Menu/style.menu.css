@@ -1,69 +1,80 @@
-#menu {
+#menuLateral {
   position: fixed;
-  background-color: black;
-  width: 18%;
-  height: 100%;
-}
-
-#linksPrincipal {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-content: center;
-  align-self: center;
-  text-align: center;
+  background-color: var(--preto);
+  width: 20%;
+  height: 100vh;
 }
 
-#linksPrincipal a {
-  border-radius: 15px;
-  background-color: var(--cinza);
-  color: var(--branco);
-  padding: 25px;
-  margin: 15px;
-  cursor: pointer;
-  height: 100%;
-  width: 75%;
-  word-wrap: break-word;
-}
-
-#sairSeparador {
+#sidebarCima {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  align-items: center;
-  align-content: center;
-  align-self: center;
-  text-align: center;
-}
-
-#sairSeparador a {
-  border-radius: 15px;
-  background-color: var(--rosa);
-  color: var(--branco);
-  padding: 25px;
-  margin: 15px;
-  cursor: pointer;
-  height: 100%;
-  width: 75%;
-}
-
-#logo {
-  display: flex;
   width: 100%;
-  height: 15%;
-  justify-content: center;
-  justify-self: center;
-  justify-items: center;
-  align-items: center;
-  align-self: center;
-  align-content: center;
   text-align: center;
+  margin-top: 25px;
 }
 
-#logo img {
+#sidebarCima img {
+  display: flex;
+  align-items: center;
   width: 25%;
-  height: 50%;
 }
 
-#logo h1 {
+#sidebarCima h3 {
   color: var(--branco);
+  font-size: 3vw;
+  display: flex;
+  align-items: center;
+}
+
+#sidebarLinks ul {
+  list-style-type: none;
+}
+
+#sidebarLinks {
+  display: flex;
+  justify-content: left;
+  padding: 10px;
+}
+
+#sidebarLinks ul {
+  width: 100%;
+}
+
+#sidebarLinks ul li a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 5px;
+  text-decoration: none;
+  color: var(--branco);
+  justify-content: ce;
+}
+
+.iconMenu svg {
+  display: flex;
+  align-items: center;
+  width: 1.3vw;
+}
+
+#sidebarLinks ul li a span {
+  margin-left: 5%;
+  font-size: 1.3vw;
+}
+
+.normalLink a:hover {
+  background-color: var(--cinza);
+  color: var(--preto);
+}
+
+.normalLink a:hover .linkHide {
+  color: var(--preto);
+}
+
+#sairLink a:hover {
+  background-color: var(--rosa);
 }

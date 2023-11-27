@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+
 :root {
-  font-family: JetBrains Mono;
+  font-family: "Tajawal", sans-serif;
   color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -9,20 +11,23 @@
 }
 
 * {
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   box-sizing: border-box;
   text-decoration: none;
   --branco: #f4f4f4;
   --verde: #01b574;
-  --cinza: #8f8f8f;
+  --cinza: #d3d3d3;
   --rosa: #cf4b83;
   --verdeclaro: rgba(1, 181, 116, 0.1);
+  --preto: #0f0f0f;
+  --cinzaescuro: #4d4d4d;
 }
 
 #root {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .gambi {

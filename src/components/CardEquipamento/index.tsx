@@ -1,19 +1,28 @@
 import "./style.cardequipamento.css";
-import { Link } from "react-router-dom";
+import { FaPen } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 export default function CardEquipamento(props: any) {
   props.equipamento;
 
   return (
     <>
-      <div className="equipamento">
-        <p>ID: {props.id}</p>
-        <p>MODELO: {props.modelo}</p>
-        <p>FABRICANTE: {props.titulo}</p>
-        <p>CONSUMO NOMINAL: {props.consumo_nominal}</p>
-        <p>DATA: {props.data_compra}</p>
-        <p>SETOR: {props.tituloFabricante}</p>
-      </div>
+      <tr id="linhas">
+        <td>{props.id}</td>
+        <td>{props.modelo}</td>
+        <td>{props.titulo}</td>
+        <td>{props.consumo_nominal}</td>
+        <td>{props.data_compra}</td>
+        <td>{props.tituloFabricante}</td>
+        <td id="acoes">
+          <span id="edit" className="buttonsCardEquipamento">
+            <FaPen />
+          </span>
+          <span id="delete" className="buttonsCardEquipamento">
+            <FaTrash />
+          </span>
+        </td>
+      </tr>
     </>
   );
 }
