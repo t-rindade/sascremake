@@ -52,7 +52,7 @@ export default function Menu() {
               </Link>
             </li>
             <li className="normalLink">
-              <Link to="/home">
+              <Link to="/setor">
                 <div className="iconMenu">
                   <FaBuilding className="linkHide" />
                 </div>

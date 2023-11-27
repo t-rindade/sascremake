@@ -8,6 +8,7 @@ import Menu from "./components/Menu";
 import Cadastro from "./pages/Cadastro";
 import Dashboard from "./pages/Dashboard";
 import Equipamento from "./pages/Equipamento";
+import Setor from "./pages/Setor";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -49,6 +50,16 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <div className="gambi">
               <Menu />
               <Equipamento />
+            </div>
+          }
+        />
+
+        <Route
+          path="setor"
+          element={
+            <div className="gambi">
+              <Menu />
+              <Setor />
             </div>
           }
         />

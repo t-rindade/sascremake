@@ -4,6 +4,7 @@ import ModalEquipamento from "../../components/ModalEquipamento";
 import useModalEquipamento from "../../hooks/useModalEquipamento";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import React from "react";
 
 export default function Cadastro() {
   const [modelo, setModelo] = useState("");

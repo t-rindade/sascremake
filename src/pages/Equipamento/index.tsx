@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./style.equipamento.css";
 import api from "../../utils/api";
 import CardEquipamento from "../../components/CardEquipamento";
+import React from "react";
 
 export default function Equipamento() {
   const [equipamentos, setEquipamentos] = useState<any[]>([]);
