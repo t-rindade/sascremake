@@ -12,17 +12,19 @@ export default function Cadastro() {
   const [consumo_nominal, setConsumoNominal] = useState("");
   const [data_compra, setData] = useState("");
   const [id_setor, setSetor] = useState("");
+  const [valor, setValor] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     axios
-      .post("https://localhost:8080/equipamento", {
+      .post("http://localhost:8080/equipamento", {
         modelo,
         id_fabricante,
         consumo_nominal,
         data_compra,
         id_setor,
+        valor,
       })
       .then((response) => console.log(response.data))
       .catch((error) => console.error(error));
@@ -69,6 +71,7 @@ export default function Cadastro() {
               value={id_setor}
               onChange={(event) => setSetor(event.target.value)}
             />
+
             <button type="submit">Submit</button>
           </form>
         </div>

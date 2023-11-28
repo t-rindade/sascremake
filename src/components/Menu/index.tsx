@@ -60,7 +60,7 @@ export default function Menu() {
               </Link>
             </li>
             <li className="normalLink">
-              <Link to="/home">
+              <Link to="/funcionario">
                 <div className="iconMenu">
                   <FaUser className="linkHide" />
                 </div>
