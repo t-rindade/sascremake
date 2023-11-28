@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
 
-:root {
-  font-family: "Tajawal", sans-serif;
-  color-scheme: light;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
 * {
   padding: 0px;
   margin: 0px;
@@ -22,6 +12,16 @@
   --verdeclaro: rgba(1, 181, 116, 0.1);
   --preto: #0f0f0f;
   --cinzaescuro: #4d4d4d;
+}
+
+:root {
+  font-family: "Tajawal", sans-serif;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 #root {

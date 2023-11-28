@@ -5,8 +5,23 @@ import useModalEquipamento from "../../hooks/useModalEquipamento";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import React from "react";
+import api from "../../utils/api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Cadastro() {
+  const notify = () =>
+    toast.success("Cadastrado", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   const [modelo, setModelo] = useState("");
   const [id_fabricante, setFabricante] = useState("");
   const [consumo_nominal, setConsumoNominal] = useState("");
@@ -30,8 +45,29 @@ export default function Cadastro() {
       .catch((error) => console.error(error));
   };
 
+  const [fabricantes, setFabricantes] = useState<any[]>([]);
+
+  function listarFabricantes() {
+    api.get("fabricante").then((response: any) => {
+      console.log(response.data);
+      setFabricantes(response.data);
+    });
+  }
+
+  const [setores, setSetores] = useState<any[]>([]);
+
+  function listarSetores() {
+    api.get("setor").then((response: any) => {
+      console.log(response.data);
+      setSetores(response.data);
+    });
+  }
+
   useEffect(() => {
     document.title = "Cadastro - SASC";
+
+    listarFabricantes();
+    listarSetores();
   }, []);
 
   const { isOpen, toggle } = useModalEquipamento();
@@ -39,43 +75,97 @@ export default function Cadastro() {
   return (
     <>
       <ModalEquipamento isOpen={isOpen} toggle={toggle}>
-        <div id="formEquipamento">
-          <form onSubmit={handleSubmit}>
+        <div id="divformEquipamento">
+          <h1>Cadastro de Equipamentos</h1>
+          <form id="formEquipamento" onSubmit={handleSubmit}>
             <label>Modelo</label>
             <input
+              className="inputEquipamento"
               type="text"
               value={modelo}
               onChange={(event) => setModelo(event.target.value)}
             />
+
             <label>Fabricante</label>
-            <input
-              type="text"
-              value={id_fabricante}
+            <select
+              className="selectEquipamento"
+              name=""
+              id="selectfabricante"
               onChange={(event) => setFabricante(event.target.value)}
-            />
+            >
+              <option selected disabled value="">
+                Selecione
+              </option>
+              {fabricantes.map((fabricante: any, index: number) => {
+                return (
+                  <option key={index} value={fabricante.id}>
+                    {fabricante.titulo}
+                  </option>
+                );
+              })}
+            </select>
+
             <label>Consumo Nominal</label>
             <input
+              className="inputEquipamento"
               type="number"
               value={consumo_nominal}
               onChange={(event) => setConsumoNominal(event.target.value)}
             />
             <label>Data</label>
             <input
+              className="inputEquipamento"
               type="date"
               value={data_compra}
               onChange={(event) => setData(event.target.value)}
             />
+
             <label>Setor</label>
-            <input
-              type="text"
-              value={id_setor}
+            <select
+              className="selectEquipamento"
+              name=""
+              id="selectsetor"
               onChange={(event) => setSetor(event.target.value)}
+            >
+              <option selected disabled value="">
+                Selecione
+              </option>
+              {setores.map((setor: any, index: number) => {
+                return (
+                  <option key={index} value={setor.id}>
+                    {setor.titulo}
+                  </option>
+                );
+              })}
+            </select>
+
+            <label>Valor</label>
+            <input
+              className="inputEquipamento"
+              type="any"
+              value={valor}
+              onChange={(event) => setValor(event.target.value)}
             />
 
-            <button type="submit">Submit</button>
+            <button onClick={notify} id="submitEquipamento" type="submit">
+              CADASTRAR
+            </button>
+            <ToastContainer
+              position="bottom-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </form>
         </div>
       </ModalEquipamento>
+
       <div id="cadastro">
         <div className="centering">
           <div className="articles">
