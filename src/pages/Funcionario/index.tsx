@@ -27,9 +27,9 @@ export default function Funcionario() {
           <thead>
             <tr id="coluna">
               <th scope="col">ID</th>
-              <th scope="col">TITULO</th>
+              <th scope="col">NOME</th>
+              <th scope="col">EMAIL</th>
               <th scope="col">UNIDADE</th>
-              <th scope="col">CEP</th>
               <th scope="col">TIPO FUNCIONARIO</th>
               <th scope="col">AÇÕES</th>
             </tr>
