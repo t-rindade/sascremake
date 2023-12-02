@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "./style.modalendereco.css";
+import "./style.modalequipamento.css";
 
 interface ModalType {
   children?: ReactNode;
@@ -7,7 +7,7 @@ interface ModalType {
   toggleEquipamento: () => void;
 }
 
-export default function ModalEndereco(props: ModalType) {
+export default function ModalEquipamento(props: ModalType) {
   return (
     <>
       {props.isOpen && (

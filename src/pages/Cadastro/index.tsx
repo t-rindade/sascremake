@@ -24,12 +24,9 @@ export default function Cadastro() {
       theme: "light",
     });
 
-  const [modelo, setModelo] = useState("");
-  const [id_fabricante, setFabricante] = useState("");
-  const [consumo_nominal, setConsumoNominal] = useState("");
+  const [id_modelo, setModelo] = useState("");
   const [data_compra, setData] = useState("");
   const [id_setor, setSetor] = useState("");
-  const [valor, setValor] = useState("");
 
   const [cep, setCep] = useState("");
   const [logradouro, setLogradouro] = useState("");
@@ -43,12 +40,9 @@ export default function Cadastro() {
 
     axios
       .post("http://localhost:8080/equipamento", {
-        modelo,
-        id_fabricante,
-        consumo_nominal,
+        id_modelo,
         data_compra,
         id_setor,
-        valor,
       })
       .then((response) => console.log(response.data))
       .catch((error) => console.error(error));
@@ -70,12 +64,12 @@ export default function Cadastro() {
       .catch((error) => console.error(error));
   };
 
-  const [fabricantes, setFabricantes] = useState<any[]>([]);
+  const [modelos, setModelos] = useState<any[]>([]);
 
-  function listarFabricantes() {
-    api.get("fabricante").then((response: any) => {
+  function listarModelos() {
+    api.get("modelo").then((response: any) => {
       console.log(response.data);
-      setFabricantes(response.data);
+      setModelos(response.data);
     });
   }
 
@@ -91,7 +85,7 @@ export default function Cadastro() {
   useEffect(() => {
     document.title = "Cadastro - SASC";
 
-    listarFabricantes();
+    listarModelos();
     listarSetores();
   }, []);
 
@@ -104,39 +98,24 @@ export default function Cadastro() {
           <h1>Cadastro de Equipamentos</h1>
           <form id="formEquipamento" onSubmit={handleSubmitEquipamento}>
             <label>Modelo</label>
-            <input
-              className="inputEquipamento"
-              type="text"
-              value={modelo}
-              onChange={(event) => setModelo(event.target.value)}
-            />
-
-            <label>Fabricante</label>
             <select
               className="selectEquipamento"
               name=""
-              id="selectfabricante"
-              onChange={(event) => setFabricante(event.target.value)}
+              id="selectModelo"
+              onChange={(event) => setModelo(event.target.value)}
             >
               <option selected disabled value="">
                 Selecione
               </option>
-              {fabricantes.map((fabricante: any, index: number) => {
+              {modelos.map((modelo: any, index: number) => {
                 return (
-                  <option key={index} value={fabricante.id}>
-                    {fabricante.titulo}
+                  <option key={index} value={modelo.id}>
+                    {modelo.modelo}
                   </option>
                 );
               })}
             </select>
 
-            <label>Consumo Nominal</label>
-            <input
-              className="inputEquipamento"
-              type="number"
-              value={consumo_nominal}
-              onChange={(event) => setConsumoNominal(event.target.value)}
-            />
             <label>Data</label>
             <input
               className="inputEquipamento"
@@ -163,14 +142,6 @@ export default function Cadastro() {
                 );
               })}
             </select>
-
-            <label>Valor</label>
-            <input
-              className="inputEquipamento"
-              type="any"
-              value={valor}
-              onChange={(event) => setValor(event.target.value)}
-            />
 
             <button onClick={notify} id="submitEquipamento" type="submit">
               CADASTRAR

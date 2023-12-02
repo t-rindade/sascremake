@@ -40,11 +40,11 @@ export default function Equipamento() {
               return (
                 <CardEquipamento
                   id={equipamento.id}
-                  modelo={equipamento.modelo}
-                  titulo={equipamento.fabricante.titulo}
-                  consumo_nominal={equipamento.consumo_nominal}
+                  modelo={equipamento.modelo.modelo}
+                  fabricante={equipamento.modelo.fabricante.titulo}
+                  consumo_nominal={equipamento.modelo.consumoNominal}
                   data_compra={equipamento.data_compra}
-                  tituloFabricante={equipamento.setor.titulo}
+                  setor={equipamento.setor.titulo}
                 />
               );
             })}

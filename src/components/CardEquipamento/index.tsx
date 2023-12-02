@@ -10,10 +10,10 @@ export default function CardEquipamento(props: any) {
       <tr id="linhas">
         <td>{props.id}</td>
         <td>{props.modelo}</td>
-        <td>{props.titulo}</td>
+        <td>{props.fabricante}</td>
         <td>{props.consumo_nominal}</td>
         <td>{props.data_compra}</td>
-        <td>{props.tituloFabricante}</td>
+        <td>{props.setor}</td>
         <td id="acoes">
           <span id="edit" className="buttonsCardEquipamento">
             <FaPen />
